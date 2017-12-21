@@ -1,0 +1,77 @@
+{% extends "index.html" %}
+
+{% block title %}添加用例{% endblock %}
+
+{% block content %}
+
+<div class="page-header" style="margin-top: 10px;">
+    <h1 style="margin-top: 10px;">执行信息</h1>
+</div>
+<form class="form-horizontal" role="form" action="/add" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+    <div class="form-group" style="margin-bottom: 5px;margin-top: 11px">
+        <label class="col-sm-2 control-label" for="app_type">app_type</label>
+
+        <div class="col-sm-10">
+            <select class="form-control" name="app_type" id="app_type">
+                <option>QDapp</option>
+                <option>HKapp</option>
+                <option>BAMApp</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group" style="margin-bottom: 5px;margin-top: 11px">
+        <label class="col-sm-2 control-label" for="test_type">test_type</label>
+
+        <div class="col-sm-10">
+            <select class="form-control" name="test_type" id="test_type">
+                <option>App启动时间</option>
+            </select>
+    </div>
+    </div>
+    <div class="form-group" style="margin-bottom: 5px;">
+        <label class="col-sm-2 control-label" for="app_url">app_url</label>
+
+        <div class="col-sm-10">
+     <input  class="form-control" id="app_url" name="app_url" type="file" multiple data-preview-file-type="any" required="required"> 
+       </div>
+    </div>
+
+    
+    <div class="form-group" style="margin-bottom: 5px;">
+        <label class="col-sm-2 control-label" for="app_version">app_version</label>
+
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="app_version" name="app_version" placeholder="App版本号" required="required">
+        </div>
+    </div>
+        <div class="form-group" style="margin-bottom: 5px;">
+        <label class="col-sm-2 control-label" for="app_packageName">app_packageName</label>
+
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="app_packageName" name="app_packageName" placeholder="App包名" required="required">
+        </div>
+    </div>
+    <div class="form-group" style="margin-bottom: 5px;">
+        <label class="col-sm-2 control-label" for="device_name">device_name</label>
+
+        <div class="col-sm-10">
+            <input class="form-control" id="device_name" name="device_name" placeholder="设备名称" required="required">
+        </div>
+    </div>
+    <div class="form-group" style="margin-bottom: 5px;">
+        <label class="col-sm-2 control-label" for="device_version">device_version</label>
+
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="device_version" name="device_version" placeholder="设备系统" required="required">
+        </div>
+    </div>
+
+    <div class="col-sm-4"></div> 
+    <div class="col-sm-5">
+        <button type="submit"  class="btn btn-primary btn-lg btn-block">点击执行</button>
+    </div>
+
+</form>
+
+{% endblock %}

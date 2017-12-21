@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+{% block meta %}
+{% endblock %}
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script> -->
+<!-- <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="/static/bootstrap/js/bootstrap.min.js"></script> 
+ -->
+<!-- <script src="{% static 'bootstrap/js/jQuery.js' %}"></script>
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'bootstrap/css/docs.min.css' %}"> -->
+<!--<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-responsive.css' %}">-->
+<!-- <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/docs.min.js' %}"></script>
+<style type="text/css" src="{% static 'bootstrap/css/bootstrap.css' %}"></style>
+<link rel="stylesheet" href="{% static 'bootstrap/css/buttons.css' %}">
+<script src="http://cdn.bootcss.com/bootstrap-hover-dropdown/3.3.7/bootstrap-hover-dropdown.min.js"></script> -->
+
+{% block style %}
+{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}App{% endblock %} </title>
+</head>
+<body>
+{% block navbar %}
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">App</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-trigger="hover">专项测试 <span
+                            class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/add1" target="_blank">执行测试</a></li>
+                        <li><a href="/history" target="_blank">历史报告</a></li>
+                        <li class="divider"></li>
+
+                    </ul>
+                </li>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+{% endblock %}
+{% block contents %}
+<div class="container">
+    {% endblock %}
+    {% block content %}
+
+    {% endblock %}
+</div>
+
+
+</body>
+
+</html>

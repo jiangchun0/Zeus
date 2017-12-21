@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+
+{% block title %}测试报告{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>测试报告
+    </h1>
+</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th>testId</th>
+        <th>appType</th>
+        <th>testType</th>
+        <th>time
+        </th>
+        <th>result</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for case in cases %}
+
+    <tr>
+        <td>{{case.testId}}</td>
+        <td>{{case.app_type}}</td>
+        <td>App启动</td>
+        <td>{{case.time}}</td>
+        <td>
+        <a class="btn btn-primary" href="details/{{case.testId}}" >详情</a> 
+        </td>
+       
+    </tr>
+
+    {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock %}

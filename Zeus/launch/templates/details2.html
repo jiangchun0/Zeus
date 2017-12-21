@@ -1,0 +1,96 @@
+{% extends "index.html" %}
+
+{% block title %}结果详情{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>结果详情
+    </h1>
+</div>
+
+<table class="table">
+    <caption>基本信息</caption>
+    <thead>
+    <tr>
+        <th>测试类型</th>
+        <th>App类型</th>
+        <th>App版本</th>
+        <th>设备名称</th>
+        <th>设备系统</th>
+       
+    </tr>
+    </thead>
+    <tbody>
+    {% for device in device %}
+    <tr>
+        <td>{{device.test_type}}</td>
+        <td>{{device.app_type}}</td>
+        <td>{{device.app_version}}</td>
+        <td>{{device.device_name}}</td>
+        <td>{{device.device_version}}</td>
+          
+    </tr>
+
+    {% endfor %}
+    </tbody>
+
+</table>
+<table class="table">
+    <caption>测试结果</caption>
+    <thead>
+    <tr>
+        <th>执行次数</th>
+        <th>冷启动时间</th>
+        <th>热启动时间</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for details in details %}
+    <tr>
+        <td>{{details.time}}</td>
+        <td>{{details.value_cold}}</td>
+        <td>{{details.value_hot}}</td> 
+    </tr>
+    {% endfor %}
+    {% for result in result %}
+      <tr>
+        <td>平均值</td>
+        <td>{{result.log_txt}}</td>
+        <td>{{result.img_url}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+
+<table class="table">
+    <caption>测试日志</caption>
+    <tbody>
+   {% for log_txt in log_txt %}
+   {% endfor %}
+    <tr>
+        <td>
+        <button onclick="myFunction()">点击查看</button>   
+        </td>
+        <td>
+        <p id="demo"></p>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+ 
+<script type="text/javascript">
+function myFunction()
+{
+    // document.getElementById("demo").innerHTML={{log_txt}};
+    // var fso=new ActiveXObject("Scripting.FileSystemObject");
+    // var openf = fso.OpenTextFile({{result.log_txt}});
+    // var str = openf.ReadAll();
+    // alert("日志内容为：" + str + "'");
+    document.getElementById("demo").innerHTML="{{log_txt}}";
+
+}
+</script>
+
+{% endblock %}
